@@ -6,7 +6,7 @@
 #    By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:33:16 by spoolpra          #+#    #+#              #
-#    Updated: 2022/02/27 16:51:12 by spoolpra         ###   ########.fr        #
+#    Updated: 2022/02/27 23:15:36 by spoolpra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ LIB_DIR = libft/
 
 INCS = -Iincludes/ -I$(LIB_DIR)includes/
 NAME = push_swap
-SRCS = push_swap.c valid_swap_input.c operation_push.c operation_reverse_rotate.c operation_rotate.c operation_swap.c swap_sort.c
+SRCS = push_swap.c valid_swap_input.c operation_push.c operation_reverse_rotate.c operation_rotate.c operation_swap.c swap_sort.c \
+       small_swap_sort.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

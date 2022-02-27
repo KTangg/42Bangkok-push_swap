@@ -6,14 +6,14 @@
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 19:39:52 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 19:39:52 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/02/27 23:14:32 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-static int	check_sort(t_stack a, t_stack b)
+/*static int	check_sort(t_stack a, t_stack b)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ static int	check_sort(t_stack a, t_stack b)
 		i++;
 	}
 	return (1);
-}
+}*/
 
 void	swap_sort(t_stack *a, t_stack *b)
 {

@@ -2,3 +2,4 @@ objs/*
 push_swap
 libft/objs/*
 libft/libft.a
+checker*

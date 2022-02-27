@@ -6,14 +6,14 @@
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:19:20 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 15:30:01 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/02/27 23:24:18 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-//static void	print_stack(t_stack stack);
+static void	print_stack(t_stack stack);
 static int	check_sort(t_stack a, t_stack b);
 
 int	main(int argc, char **argv)
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 		swap_error(a, b);
 	if (!check_sort(a, b))
 		swap_sort(&a, &b);
+	print_stack(a);
 	//free_ab(a, b);
 	return (1);
 }
@@ -65,7 +66,7 @@ static int	check_sort(t_stack a, t_stack b)
 	return (1);
 }
 
-/*static void	print_stack(t_stack stack)
+static void	print_stack(t_stack stack)
 {
 	size_t	i;
 
@@ -75,4 +76,4 @@ static int	check_sort(t_stack a, t_stack b)
 		ft_printf("%d\n", stack.i_array[i]);
 		i++;
 	}
-}*/
+}
