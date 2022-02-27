@@ -34,6 +34,10 @@ void	push_a(t_stack *a, t_stack *b);
 void	push_b(t_stack *a, t_stack *b);
 void	rotate_ab(t_stack a, t_stack b);
 void	swap_error(t_stack a, t_stack b);
+void	swap_sort(t_stack *a, t_stack *b);
+void	small_swap_sort(t_stack a, t_stack b);
+void	large_swap_sort(t_stack a, t_stack b);
+void	medium_swap_sort(t_stack a, t_stack b);
 void	reverse_rotate_ab(t_stack a, t_stack b);
 
 #endif

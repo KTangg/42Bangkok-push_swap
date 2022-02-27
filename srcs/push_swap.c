@@ -29,14 +29,8 @@ int	main(int argc, char **argv)
 	b.size = 0;
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
-	print_stack(a);
-	push_a(&a, &b);
-	print_stack(a);
-	print_stack(b);
-	if (!check_sort(a, b))
-		ft_printf("Unsorted");
-		//swap_sort(*a, *b);
-	//free_ab(a, b);
+	swap_sort(&a, &b);
+	free_ab(a, b);
 	return (1);
 }
 
