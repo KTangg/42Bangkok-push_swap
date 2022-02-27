@@ -33,6 +33,7 @@ static int	check_sort(t_stack a, t_stack b)
 	{
 		if (a.i_array[i] > a.i_array[i + 1])
 			return (0);
+		i++;
 	}
 	return (1);
 }
