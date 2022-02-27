@@ -22,6 +22,21 @@ static void	error_report(t_stack a)
 	exit(1);
 }
 
+static int	check_sort(t_stack a, t_stack b)
+{
+	size_t	i;
+
+	i = 0;
+	if (b.size != 0)
+		return (0);
+	while (i < (a.size - 1))
+	{
+		if (a.i_array[i] > a.i_array[i + 1])
+			return (0);
+	}
+	return (1);
+}
+
 static void	print_stack(t_stack stack)
 {
 	size_t	i;
@@ -47,9 +62,10 @@ int	main(int argc, char **argv)
 	b.size = 0;
 	if (!valid_swap_input(argc - 1, argv, &a))
 		error_report(a);
-	print_stack(a);
-	/*while (!swap_sort(a, b))
-		push_swap_sort(a, b);
-	free_ab(a, b);*/
+	while (!check_sort(a, b))
+		ft_printf("Not sort\n");
+		//push_swap_sort(a, b);
+	ft_printf("Sort\n");
+	free_ab(a, b);
 	return (1);
 }
