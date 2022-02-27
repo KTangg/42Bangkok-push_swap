@@ -6,7 +6,7 @@
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:54:43 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 13:54:43 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/02/27 15:30:22 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	valid_integer(char **array, size_t array_i, int *a)
 		i++;
 	while (nbr[i] != '\0')
 	{
-		if (!is_digit(nbr[i]))
+		if (!ft_isdigit(nbr[i]))
 			return (0);
 		i++;
 	}
