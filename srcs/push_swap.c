@@ -29,7 +29,7 @@ static void	print_stack(t_stack stack)
 	i = 0;
 	while (i < stack.size)
 	{
-		ft_printf("%d", stack.i_array[i]);
+		ft_printf("%d\n", stack.i_array[i]);
 		i++;
 	}
 }
