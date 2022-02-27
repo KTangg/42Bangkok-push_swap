@@ -36,7 +36,8 @@ INCS = -Iincludes/
 all: $(NAME)
 
 $(NAME): $(addprefix $(OBJ_DIR),$(OBJS))
-	$(CC) $^ -o $(NAME) -L $(LIB_DIR) -lft
+	ar -rcs $@ $^
+	ranlib $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
