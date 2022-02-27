@@ -21,13 +21,12 @@ LIB_DIR = libft/
 INCS = -Iincludes -I$(LIB_DIR)/includes
 NAME = push_swap
 SRCS = push_swap.c valid_swap_input.c
-OBJS = $($(addprefix SRC_DIR, SRCS):.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar -rcs $@ $^
-	ranlib $@
+$(NAME): $(addprefix $(OBJ_DIR),$(OBJS))
+	$(CC) $^ -o $(NAME) -L$(LIB_DIR) -lft
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -I $(INCS) -o $@
