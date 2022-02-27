@@ -43,7 +43,7 @@ void	swap_error(t_stack a, t_stack b)
 {
 	if (a.i_array)
 		free(a.i_array);
-	if (b.i_array);
+	if (b.i_array)
 		free(b.i_array);
 	a.i_array = NULL;
 	b.i_array = NULL;
