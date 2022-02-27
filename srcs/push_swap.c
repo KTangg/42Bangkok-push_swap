@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	print_stack(t_stack stack);
+static void	free_stack(t_stack a, t_stack b);
 static int	check_sort(t_stack a, t_stack b);
 
 int	main(int argc, char **argv)
@@ -33,12 +33,19 @@ int	main(int argc, char **argv)
 		swap_error(a, b);
 	if (!check_sort(a, b))
 		swap_sort(&a, &b);
-	print_stack(a);
-	//free_ab(a, b);
+	print_stack(&a, &b);
+	free_stack(a, b);
 	return (1);
 }
 
 void	swap_error(t_stack a, t_stack b)
+{
+	free_stack(a, b);
+	ft_putstr_fd("Error\n", STDERR);
+	exit(1);
+}
+
+static void	free_stack(t_stack a, t_stack b)
 {
 	if (a.i_array)
 		free(a.i_array);
@@ -46,8 +53,6 @@ void	swap_error(t_stack a, t_stack b)
 		free(b.i_array);
 	a.i_array = NULL;
 	b.i_array = NULL;
-	ft_putstr_fd("Error\n", STDERR);
-	exit(1);
 }
 
 static int	check_sort(t_stack a, t_stack b)
@@ -64,16 +69,4 @@ static int	check_sort(t_stack a, t_stack b)
 		i++;
 	}
 	return (1);
-}
-
-static void	print_stack(t_stack stack)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < stack.size)
-	{
-		ft_printf("%d\n", stack.i_array[i]);
-		i++;
-	}
 }

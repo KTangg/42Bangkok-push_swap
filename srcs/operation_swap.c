@@ -39,4 +39,5 @@ void	push_swap_ss(t_stack *a, t_stack *b)
 	top_swap(a);
 	top_swap(b);
 	ft_printf("ss\n");
+	print_stack(a, b);
 }

@@ -47,4 +47,5 @@ void	rotate_ab(t_stack *a, t_stack *b)
 	rotate_stack(a);
 	rotate_stack(b);
 	ft_printf("rr\n");
+	print_stack(a, b);
 }

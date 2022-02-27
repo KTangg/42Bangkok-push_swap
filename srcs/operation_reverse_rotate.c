@@ -16,18 +16,26 @@
 static void	reverse_rotate_stack(t_stack *stack)
 {
 	int		tmp;
+	int		prev;
 	size_t	i;
 
-	i = 0;
+	i = 1;
+	prev = stack->i_array[0];
 	while (i < stack->size)
 	{
 		if (i != (stack->size - 1))
 		{
-			tmp = stack->i_array[i + 1];
-			stack->i_array[i + 1] = stack->i_array[i];
+			tmp = stack->i_array[i];
+			stack->i_array[i] = prev;
+			prev = tmp;
 		}
 		else
-			stack->i_array[0] = tmp;
+		{
+			tmp = stack->i_array[i];
+			stack->i_array[i] = prev;
+			prev = tmp;
+			stack->i_array[0] = prev;
+		}
 		i++;
 	}
 }

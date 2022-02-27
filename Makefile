@@ -21,7 +21,7 @@ LIB_DIR = libft/
 INCS = -Iincludes/ -I$(LIB_DIR)includes/
 NAME = push_swap
 SRCS = push_swap.c valid_swap_input.c operation_push.c operation_reverse_rotate.c operation_rotate.c operation_swap.c swap_sort.c \
-       small_swap_sort.c
+       small_swap_sort.c print_stack.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

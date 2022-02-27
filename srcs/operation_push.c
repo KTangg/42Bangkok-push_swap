@@ -41,8 +41,9 @@ static int	*cut_top(int *array, size_t size)
 		free(array);
 		return (NULL);
 	}
-	free(array);
 	new_array = intcpy(new_array, array + 1, size - 1);
+	free(array);
+	array = NULL;
 	return (new_array);
 }
 
@@ -61,7 +62,10 @@ static int	*add_top(int *array, size_t size, int new)
 	if (size > 0)
 		intcpy(&new_array[1], array, size);
 	if (array)
+	{
 		free(array);
+		array = NULL;
+	}
 	return (new_array);
 }
 

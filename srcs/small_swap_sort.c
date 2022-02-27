@@ -26,17 +26,25 @@ void	merge_a(t_stack *a, t_stack *b, size_t size)
 		{
 			push_b(a, b);
 			i++;
+			print_stack(a, b);
 		}
 		else
 		{
 			rotate_a(a);
+			print_stack(a, b);
 			rotate_cnt = rotate_cnt + 1;
 		}
 	}
 	while (i++ < size)
+	{
 		push_b(a, b);
+		print_stack(a, b);
+	}
 	while (rotate_cnt-- > 0)
+	{
 		reverse_rotate_a(a);
+		print_stack(a, b);
+	}
 }
 
 void	small_swap_sort(t_stack *a, t_stack *b, size_t size)
@@ -47,13 +55,24 @@ void	small_swap_sort(t_stack *a, t_stack *b, size_t size)
 	while (i < (size / 2))
 	{
 		push_a(a, b);
+		print_stack(a, b);
 		i++;
 	}
 	if (a->size > 1)
+	{
 		if (a->i_array[0] > a->i_array[1])
+		{
 			swap_a(a);
+			print_stack(a, b);
+		}
+	}
 	if (b->size > 1)
+	{
 		if (b->i_array[0] < b->i_array[1])
+		{
 			swap_a(b);
+			print_stack(a, b);
+		}
+	}
 	merge_a(a, b, size / 2);
 }
