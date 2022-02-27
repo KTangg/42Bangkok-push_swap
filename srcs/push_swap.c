@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 		swap_error(a, b);
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
-	swap_sort(&a, &b);
+	if (!check_sort(a, b))
+		swap_sort(&a, &b);
 	//free_ab(a, b);
 	return (1);
 }
@@ -64,7 +65,7 @@ static int	check_sort(t_stack a, t_stack b)
 	return (1);
 }
 
-static void	print_stack(t_stack stack)
+/*static void	print_stack(t_stack stack)
 {
 	size_t	i;
 
@@ -74,4 +75,4 @@ static void	print_stack(t_stack stack)
 		ft_printf("%d\n", stack.i_array[i]);
 		i++;
 	}
-}
+}*/
