@@ -23,6 +23,12 @@ typedef struct s_int_array
 	size_t	size;
 }	t_stack;
 
-int	valid_swap_input(size_t array_size, char **array, t_stack *a);
+
+int		valid_swap_input(size_t array_size, char **array, t_stack *a);
+void	swap_a(t_stack a);
+void	swap_b(t_stack b);
+void	push_a(t_stack *a, t_stack *b);
+void	push_b(t_stack *a, t_stack *b);
+void	swap_error(t_stack a, t_stack b);
 
 #endif
