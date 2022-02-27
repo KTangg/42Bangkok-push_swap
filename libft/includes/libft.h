@@ -35,7 +35,7 @@ int		ft_lstsize(t_list *lst);
 int		ft_printf(const char *format, ...);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-long 	ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 void	ft_putstr_fd(char *s, int fd);
@@ -69,6 +69,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
 
 #endif
