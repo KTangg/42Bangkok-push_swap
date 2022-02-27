@@ -35,5 +35,6 @@ clean:
 	@make -C $(LIB_DIR) clean --silent
 	$(RM) $(OBJS)
 fclean: clean
+	@make -C $(LIB_DIR) fclean --silent
 	$(RM) $(NAME)
 re: fclean all
