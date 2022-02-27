@@ -22,6 +22,18 @@ static void	error_report(t_stack a)
 	exit(1);
 }
 
+static void	print_stack(t_stack stack)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < stack.size)
+	{
+		ft_printf("%d", stack.i_array[i]);
+		i++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -35,6 +47,7 @@ int	main(int argc, char **argv)
 	b.size = 0;
 	if (!valid_swap_input(argc - 1, argv, &a))
 		error_report(a);
+	print_stack(a);
 	/*while (!swap_sort(a, b))
 		push_swap_sort(a, b);
 	free_ab(a, b);*/
