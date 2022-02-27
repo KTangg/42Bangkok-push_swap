@@ -62,6 +62,7 @@ int	main(int argc, char **argv)
 	b.size = 0;
 	if (!valid_swap_input(argc - 1, argv, &a))
 		error_report(a);
+	print_stack(a);
 	while (!check_sort(a, b))
 		ft_printf("Not sort\n");
 		//push_swap_sort(a, b);
