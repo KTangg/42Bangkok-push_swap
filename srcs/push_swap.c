@@ -66,6 +66,6 @@ int	main(int argc, char **argv)
 		ft_printf("Not sort\n");
 		//push_swap_sort(a, b);
 	ft_printf("Sort\n");
-	free_ab(a, b);
+	//free_ab(a, b);
 	return (1);
 }
