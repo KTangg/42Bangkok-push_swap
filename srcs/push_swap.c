@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	print_stack(t_stack stack);
+//static void	print_stack(t_stack stack);
 static int	check_sort(t_stack a, t_stack b);
 
 int	main(int argc, char **argv)
