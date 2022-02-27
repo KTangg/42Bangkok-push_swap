@@ -21,12 +21,14 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
-	if (argc > 0)
+	if (argc > 1)
 		argv = argv + 1;
 	a.i_array= (int *)malloc(sizeof(int) * (argc - 1));
 	a.size = argc - 1;
 	b.i_array = NULL;
 	b.size = 0;
+	if (a.size < 1)
+		swap_error(a, b);
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
 	swap_sort(&a, &b);

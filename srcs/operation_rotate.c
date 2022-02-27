@@ -13,36 +13,36 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	rotate_stack(t_stack stack)
+static void	rotate_stack(t_stack *stack)
 {
 	int		tmp;
 	size_t	i;
 
 	i = 0;
-	tmp = stack.i_array[0];
-	while (i < stack.size)
+	tmp = stack->i_array[0];
+	while (i < stack->size)
 	{
-		if (i != (stack.size - 1))
-			stack.i_array[i] = stack.i_array[i + 1];
+		if (i != (stack->size - 1))
+			stack->i_array[i] = stack->i_array[i + 1];
 		else
-			stack.i_array[i] = tmp;
+			stack->i_array[i] = tmp;
 		i++;
 	}
 }
 
-void	rotate_a(t_stack a)
+void	rotate_a(t_stack *a)
 {
 	rotate_stack(a);
 	ft_printf("ra\n");
 }
 
-void	rotate_b(t_stack b)
+void	rotate_b(t_stack *b)
 {
 	rotate_stack(b);
 	ft_printf("rb\n");
 }
 
-void	rotate_ab(t_stack a, t_stack b)
+void	rotate_ab(t_stack *a, t_stack *b)
 {
 	rotate_stack(a);
 	rotate_stack(b);
