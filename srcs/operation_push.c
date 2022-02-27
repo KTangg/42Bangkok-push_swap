@@ -79,7 +79,6 @@ void	push_a(t_stack *a, t_stack *b)
 	if (!b->i_array)
 		swap_error(*a, *b);
 	ft_printf("pa\n");
-	return (1);
 }
 
 void	push_b(t_stack *a, t_stack *b)
