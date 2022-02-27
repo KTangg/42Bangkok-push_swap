@@ -27,8 +27,14 @@ typedef struct s_int_array
 int		valid_swap_input(size_t array_size, char **array, t_stack *a);
 void	swap_a(t_stack a);
 void	swap_b(t_stack b);
+void	rotate_a(t_stack a);
+void	rotate_b(t_stack b);
+void	reverse_rotate_a(t_stack a);
+void	reverse_rotate_b(t_stack b);
 void	push_a(t_stack *a, t_stack *b);
 void	push_b(t_stack *a, t_stack *b);
+void	rotate_ab(t_stack a, t_stack b);
 void	swap_error(t_stack a, t_stack b);
+void	reverse_rotate_ab(t_stack a, t_stack b);
 
 #endif
