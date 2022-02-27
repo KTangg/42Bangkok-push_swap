@@ -18,7 +18,7 @@ SRC_DIR = srcs/
 OBJ_DIR = objs/
 LIB_DIR = libft/
 
-INCS = -Iincludes -I$(LIB_DIR)/includes
+INCS = -Iincludes -I$(LIB_DIR)includes
 NAME = push_swap
 SRCS = push_swap.c valid_swap_input.c
 OBJS = $(SRCS:.c=.o)
