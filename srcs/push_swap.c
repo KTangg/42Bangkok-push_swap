@@ -33,7 +33,8 @@ int	main(int argc, char **argv)
 	push_a(&a, &b);
 	print_stack(a);
 	print_stack(b);
-	//if (!check_sort(a, b))
+	if (!check_sort(a, b))
+		ft_printf("Unsorted");
 		//swap_sort(*a, *b);
 	//free_ab(a, b);
 	return (1);
