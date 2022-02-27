@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
 	swap_sort(&a, &b);
-	free_ab(a, b);
+	//free_ab(a, b);
 	return (1);
 }
 
