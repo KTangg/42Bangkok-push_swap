@@ -17,6 +17,12 @@
 
 # define STDERR 2
 
-int	valid_swap_input(size_t array_size, char **array);
+typedef struct s_int_array
+{
+	int	*i_array;
+	size_t size;
+}	t_stack;
+
+int	valid_swap_input(size_t array_size, char **array, t_stack *a);
 
 #endif

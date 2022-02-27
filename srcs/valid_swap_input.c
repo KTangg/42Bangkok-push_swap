@@ -13,11 +13,13 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static int	valid_integer(char *nbr)
+static int	valid_integer(char **array, size_t array_i, int *a)
 {
+	char	*nbr;
 	size_t	i;
 	long	n;
 
+	nbr = array[array_i];
 	i = 0;
 	while (ft_isspace(nbr[i]))
 		i++;
@@ -32,19 +34,34 @@ static int	valid_integer(char *nbr)
 	n = ft_atoi(nbr);
 	if (n < -2147483648 || n > 2147483647)
 		return (0);
+	a[array_i] = n;
 	return (1);
 }
 
-int	valid_swap_input(size_t array_size, char **array)
+static int	valid_dup(size_t size, int *a)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (a[i] == a[size])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	valid_swap_input(size_t array_size, char **array, t_stack *a)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < array_size)
 	{
-		if (!valid_integer(array[i]))
+		if (!valid_integer(array, i, a->i_array))
 			return (0);
-		if (!valid_dup(array, i))
+		if (!valid_dup(i, a->i_array))
 			return (0);
 		i++;
 	}
