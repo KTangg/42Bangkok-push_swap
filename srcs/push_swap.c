@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
+	if (argc > 0)
+		argv = argv + 1;
 	a.i_array= (int *)malloc(sizeof(int) * (argc - 1));
 	a.size = argc - 1;
 	b.i_array = NULL;
