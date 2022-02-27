@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
 	print_stack(a);
-	push_a(a, b);
+	push_a(&a, &b);
 	print_stack(a);
 	print_stack(b);
 	if (!check_sort(a, b))

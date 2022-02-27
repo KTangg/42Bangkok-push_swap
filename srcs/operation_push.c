@@ -65,34 +65,34 @@ static int	*add_top(int *array, size_t size, int new)
 	return (new_array);
 }
 
-void	push_a(t_stack a, t_stack b)
+void	push_a(t_stack *a, t_stack *b)
 {
 	int	tmp;
 
-	tmp = a.i_array[0];
-	a.i_array = cut_top(a.i_array, a.size);
-	a.size = a.size - 1;
-	if (a.size != 0 && a.i_array == NULL)
-		swap_error(a, b);
-	b.i_array = add_top(b.i_array, b.size, tmp);
-	b.size = b.size + 1;
-	if (!b.i_array)
-		swap_error(a, b);
+	tmp = a->i_array[0];
+	a->i_array = cut_top(a->i_array, a->size);
+	a->size = a->size - 1;
+	if (a->size != 0 && a->i_array == NULL)
+		swap_error(*a, *b);
+	b->i_array = add_top(b->i_array, b->size, tmp);
+	b->size = b->size + 1;
+	if (!b->i_array)
+		swap_error(*a, *b);
 	ft_printf("pa\n");
 }
 
-void	push_b(t_stack a, t_stack b)
+void	push_b(t_stack *a, t_stack *b)
 {
 	int	tmp;
 
-	tmp = b.i_array[0];
-	b.i_array = cut_top(b.i_array, b.size);
-	b.size = b.size - 1;
-	if (b.size != 0 && b.i_array == NULL)
-		swap_error(a, b);
-	a.i_array = add_top(a.i_array, a.size, tmp);
-	a.size = a.size + 1;
-	if (!a.i_array)
-		swap_error(a, b);
+	tmp = b->i_array[0];
+	b->i_array = cut_top(b->i_array, b->size);
+	b->size = b->size - 1;
+	if (b->size != 0 && b->i_array == NULL)
+		swap_error(*a, *b);
+	a->i_array = add_top(a->i_array, a->size, tmp);
+	a->size = a->size + 1;
+	if (!a->i_array)
+		swap_error(*a, *b);
 	ft_printf("pb\n");
 }
