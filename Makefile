@@ -6,7 +6,7 @@
 #    By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:33:16 by spoolpra          #+#    #+#              #
-#    Updated: 2022/02/27 15:33:33 by spoolpra         ###   ########.fr        #
+#    Updated: 2022/02/27 16:51:12 by spoolpra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) -c $< $(INCS) -o $@
 clean:
 	@make -C $(LIB_DIR) clean --silent
-	$(RM) $(OBJS)
+	$(RM) $(OBJ_DIR)
 fclean: clean
 	@make -C $(LIB_DIR) fclean --silent
 	$(RM) $(NAME)
