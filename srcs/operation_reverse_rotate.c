@@ -35,18 +35,18 @@ static void	reverse_rotate_stack(t_stack *stack)
 void	reverse_rotate_a(t_stack *a)
 {
 	reverse_rotate_stack(a);
-	ft_printf("ra\n");
+	ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_stack *b)
 {
 	reverse_rotate_stack(b);
-	ft_printf("rb\n");
+	ft_printf("rrb\n");
 }
 
 void	reverse_rotate_ab(t_stack *a, t_stack *b)
 {
 	reverse_rotate_stack(a);
 	reverse_rotate_stack(b);
-	ft_printf("rr\n");
+	ft_printf("rrr\n");
 }
