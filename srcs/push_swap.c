@@ -42,11 +42,18 @@ void	swap_error(t_stack *a, t_stack *b)
 	exit(1);
 }
 
-void	print_stack(t_stack *stack)
+void	print_stack(t_stack *a, t_stack *b)
 {
-	while (stack != NULL)
+	ft_printf("a:	");
+	while (a != NULL)
 	{
-		ft_printf("%d -> ", stack->i);
+		ft_printf("%d -> ", a->i);
+	}
+	ft_printf("NULL\n");
+	ft_printf("b:	");
+	while (b != NULL)
+	{
+		ft_printf("%d -> ", b->i);
 	}
 	ft_printf("NULL\n");
 }
