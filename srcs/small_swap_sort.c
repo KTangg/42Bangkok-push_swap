@@ -46,4 +46,6 @@ void	small_swap_sort(t_stack **a, t_stack **b, size_t size)
 		swap_a(a);
 	else if (size == 3)
 		sort_stack_3(a);
+	else
+		(void)b;
 }
