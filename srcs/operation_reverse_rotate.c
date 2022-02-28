@@ -26,6 +26,8 @@ t_stack	*stack_push_bot(t_stack **stack)
 		{
 			if (prev)
 				prev->next = NULL;
+			else
+				*stack = NULL;
 			return (cursor);
 		}
 		prev = cursor;
