@@ -22,16 +22,16 @@ static void	sort_stack_3(t_stack **a)
 	top = (*a)->i;
 	mid = (*a)->next->i;
 	bot = (*a)->next->next->i;
-	if (top > mid && mid < bot)
+	if (top > mid && mid < bot && bot > top)
 		swap_a(a);
-	else if (top > mid && mid > bot)
+	else if (top > mid && mid > bot && bot < top)
 	{
 		rotate_a(a);
 		rotate_a(a);
 	}
-	else if (top > mid && mid < bot)
+	else if (top > mid && mid < bot && bot < top)
 		rotate_a(a);
-	else if (top < mid && mid > bot)
+	else if (top < mid && mid > bot && bot < top)
 	{
 		swap_a(a);
 		rotate_a(a);
