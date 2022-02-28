@@ -13,60 +13,53 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	free_stack(t_stack a, t_stack b);
-static int	check_sort(t_stack a, t_stack b);
+static void	free_stack(t_stack *a, t_stack *b);
+static int	check_sort(t_stack *a, t_stack *b);
 
 int	main(int argc, char **argv)
 {
-	t_stack	a;
-	t_stack	b;
+	t_stack	*a;
+	t_stack	*b;
 
 	if (argc > 1)
 		argv = argv + 1;
-	a.i_array= (int *)malloc(sizeof(int) * (argc - 1));
-	a.size = argc - 1;
-	b.i_array = NULL;
-	b.size = 0;
-	if (a.size < 1)
+	a = NULL;
+	b = NULL;
+	if (argc <=1)
 		swap_error(a, b);
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
-	if (!check_sort(a, b))
-		swap_sort(&a, &b);
-	print_stack(&a, &b);
+	//if (!check_sort(a, b))
+		//swap_sort(&a, &b);
+	print_stack(a);
 	free_stack(a, b);
-	return (1);
 }
 
-void	swap_error(t_stack a, t_stack b)
+void	swap_error(t_stack *a, t_stack *b)
 {
 	free_stack(a, b);
 	ft_putstr_fd("Error\n", STDERR);
 	exit(1);
 }
 
-static void	free_stack(t_stack a, t_stack b)
+void	print_stack(t_stack *stack)
 {
-	if (a.i_array)
-		free(a.i_array);
-	if (b.i_array)
-		free(b.i_array);
-	a.i_array = NULL;
-	b.i_array = NULL;
+	while (stack != NULL)
+	{
+		ft_printf("%d -> ", stack->i);
+	}
+	ft_printf("NULL \n");
 }
 
-static int	check_sort(t_stack a, t_stack b)
+static void	free_stack(t_stack *a, t_stack *b)
 {
-	size_t	i;
+	stack_clear(a);
+	stack_clear(b);
+	a = NULL;
+	b = NULL;
+}
 
-	i = 0;
-	if (b.size != 0)
-		return (0);
-	while (i < (a.size - 1))
-	{
-		if (a.i_array[i] > a.i_array[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
+static int	check_sort(t_stack *a, t_stack *b)
+{
+	return (0);
 }

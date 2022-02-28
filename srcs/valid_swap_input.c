@@ -13,18 +13,19 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static int	valid_integer(char **array, size_t array_i, int *a)
+static int	valid_integer(char *nbr, t_stack **a)
 {
-	char	*nbr;
-	size_t	i;
 	long	n;
+	size_t	i;
+	t_stack	*new;
 
-	nbr = array[array_i];
 	i = 0;
 	while (ft_isspace(nbr[i]))
 		i++;
 	if (nbr[i] == '+' || nbr[i] == '-')
 		i++;
+	if (ft_strlen(&nbr[i]) > 10)
+		return (0);
 	while (nbr[i] != '\0')
 	{
 		if (!ft_isdigit(nbr[i]))
@@ -34,34 +35,40 @@ static int	valid_integer(char **array, size_t array_i, int *a)
 	n = ft_atoi(nbr);
 	if (n < -2147483648 || n > 2147483647)
 		return (0);
-	a[array_i] = n;
-	return (1);
+	new = create_stack(n);
+	if (!new)
+		return (0);
+	stack_add_btm(*a, new);
 }
 
-static int	valid_dup(size_t size, int *a)
+static int	valid_dup(size_t size, t_stack *a)
 {
 	size_t	i;
+	t_stack	*check;
 
+	i = 0;
+	check = a;
+	while (i < size)
+		check = check->next;
 	i = 0;
 	while (i < size)
 	{
-		if (a[i] == a[size])
+		if (a->i == check->i)
 			return (0);
-		i++;
+		a = a->next;
 	}
-	return (1);
 }
 
-int	valid_swap_input(size_t array_size, char **array, t_stack *a)
+int	valid_swap_input(size_t array_size, char **array, t_stack **a)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < array_size)
 	{
-		if (!valid_integer(array, i, a->i_array))
+		if (!valid_integer(array[i], a))
 			return (0);
-		if (!valid_dup(i, a->i_array))
+		if (!valid_dup(i, *a))
 			return (0);
 		i++;
 	}

@@ -13,28 +13,33 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	top_swap(t_stack *a)
+static void	top_swap(t_stack **stack)
 {
-	int	tmp;
+	t_stack	*top;
+	t_stack	*cursor;
 
-	tmp = a->i_array[0];
-	a->i_array[0] = a->i_array[1];
-	a->i_array[1] = tmp;
+	top = *stack;
+	if (!top->next)
+		return ;
+	cursor = top;
+	*stack = top->next;
+	top->next = (*stack)->next;
+	(*stack)->next = top;
 }
 
-void	swap_a(t_stack *a)
+void	swap_a(t_stack **a)
 {
 	top_swap(a);
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_stack *b)
+void	swap_b(t_stack **b)
 {
 	top_swap(b);
 	ft_printf("sa\n");
 }
 
-void	push_swap_ss(t_stack *a, t_stack *b)
+void	swap_ss(t_stack **a, t_stack **b)
 {
 	top_swap(a);
 	top_swap(b);

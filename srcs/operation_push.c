@@ -13,90 +13,32 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static int	*intcpy(int *dst, int *src, size_t size)
+t_stack	*stack_push_top(t_stack **stack)
 {
-	size_t	i;
+	t_stack	*pushed;
 
-	i = 0;
-	while (i < size)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
-
-static int	*cut_top(int *array, size_t size)
-{
-	int	*new_array;
-
-	if (size == 1)
-	{
-		free(array);
-		return(NULL);
-	}
-	new_array = (int *)malloc(sizeof(int) * (size - 1));
-	if (!new_array)
-	{
-		free(array);
+	pushed = *stack;
+	if (!pushed)
 		return (NULL);
-	}
-	new_array = intcpy(new_array, array + 1, size - 1);
-	free(array);
-	array = NULL;
-	return (new_array);
+	*stack = pushed->next;
+	pushed->next = NULL;
+	return (pushed);
 }
 
-static int	*add_top(int *array, size_t size, int new)
+void	push_a(t_stack **a, t_stack **b)
 {
-	int	*new_array;
+	t_stack	*pushed;
 
-	new_array = (int *)malloc(sizeof(int) * (size + 1));
-	if (!new_array)
-	{
-		if (array)
-			free(array);
-		return (NULL);
-	}
-	new_array[0] = new;
-	if (size > 0)
-		intcpy(&new_array[1], array, size);
-	if (array)
-	{
-		free(array);
-		array = NULL;
-	}
-	return (new_array);
-}
-
-void	push_a(t_stack *a, t_stack *b)
-{
-	int	tmp;
-
-	tmp = a->i_array[0];
-	a->i_array = cut_top(a->i_array, a->size);
-	a->size = a->size - 1;
-	if (a->size != 0 && a->i_array == NULL)
-		swap_error(*a, *b);
-	b->i_array = add_top(b->i_array, b->size, tmp);
-	b->size = b->size + 1;
-	if (!b->i_array)
-		swap_error(*a, *b);
+	pushed = stack_push(a);
+	stack_add_top(b, pushed);
 	ft_printf("pa\n");
 }
 
-void	push_b(t_stack *a, t_stack *b)
+void	push_b(t_stack **a, t_stack **b)
 {
-	int	tmp;
+	t_stack	*pushed;
 
-	tmp = b->i_array[0];
-	b->i_array = cut_top(b->i_array, b->size);
-	b->size = b->size - 1;
-	if (b->size != 0 && b->i_array == NULL)
-		swap_error(*a, *b);
-	a->i_array = add_top(a->i_array, a->size, tmp);
-	a->size = a->size + 1;
-	if (!a->i_array)
-		swap_error(*a, *b);
+	pushed = stack_push(b);
+	stack_add_top(a, pushed);
 	ft_printf("pb\n");
 }

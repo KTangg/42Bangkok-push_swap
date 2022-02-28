@@ -13,46 +13,42 @@
 #include "libft.h"
 #include "push_swap.h"
 
-static void	reverse_rotate_stack(t_stack *stack)
+t_stack	*stack_push_bot(t_stack **stack)
 {
-	int		tmp;
-	int		prev;
-	size_t	i;
+	t_stack	*prev;
+	t_stack	*cursor;
 
-	i = 1;
-	prev = stack->i_array[0];
-	while (i < stack->size)
+	if (*stack == NULL)
+		return (NULL);
+	cursor = *stack;
+	prev = NULL;
+	while (cursor != NULL)
 	{
-		if (i != (stack->size - 1))
+		if (cursor->next == NULL)
 		{
-			tmp = stack->i_array[i];
-			stack->i_array[i] = prev;
-			prev = tmp;
 		}
-		else
-		{
-			tmp = stack->i_array[i];
-			stack->i_array[i] = prev;
-			prev = tmp;
-			stack->i_array[0] = prev;
-		}
-		i++;
+		prev = cursor;
+		cursor = cursor->next;
 	}
 }
 
-void	reverse_rotate_a(t_stack *a)
+static void	reverse_rotate_stack(t_stack **stack)
+{
+}
+
+void	reverse_rotate_a(t_stack **a)
 {
 	reverse_rotate_stack(a);
 	ft_printf("rra\n");
 }
 
-void	reverse_rotate_b(t_stack *b)
+void	reverse_rotate_b(t_stack **b)
 {
 	reverse_rotate_stack(b);
 	ft_printf("rrb\n");
 }
 
-void	reverse_rotate_ab(t_stack *a, t_stack *b)
+void	reverse_rotate_ab(t_stack **a, t_stack **b)
 {
 	reverse_rotate_stack(a);
 	reverse_rotate_stack(b);

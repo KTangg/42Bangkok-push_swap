@@ -17,26 +17,31 @@
 
 # define STDERR 2
 
-typedef struct s_int_array
+typedef struct s_stack
 {
-	int		*i_array;
-	size_t	size;
+	int				i;
+	struct s_stack	*next;
 }	t_stack;
 
-int		valid_swap_input(size_t array_size, char **array, t_stack *a);
-void	swap_a(t_stack *a);
-void	swap_b(t_stack *b);
-void	rotate_a(t_stack *a);
-void	rotate_b(t_stack *b);
-void	reverse_rotate_a(t_stack *a);
-void	reverse_rotate_b(t_stack *b);
-void	push_a(t_stack *a, t_stack *b);
-void	push_b(t_stack *a, t_stack *b);
-void	swap_error(t_stack a, t_stack b);
+int		valid_swap_input(size_t array_size, char **array, t_stack **a);
+void	swap_a(t_stack **a);
+void	swap_b(t_stack **b);
+void	rotate_a(t_stack **a);
+void	rotate_b(t_stack **b);
+void	stack_clear(t_stack *stack);
+void	reverse_rotate_a(t_stack **a);
+void	reverse_rotate_b(t_stack **b);
+void	push_a(t_stack **a, t_stack **b);
+void	push_b(t_stack **a, t_stack **b);
+void	swap_ss(t_stack **a, t_stack **b);
+void	swap_error(t_stack *a, t_stack *b);
 void	swap_sort(t_stack *a, t_stack *b);
-void	rotate_ab(t_stack *a, t_stack *b);
-void	print_stack(t_stack *a, t_stack *b);
-void	reverse_rotate_ab(t_stack *a, t_stack *b);
-void	small_swap_sort(t_stack *a, t_stack *b, size_t size);
+void	rotate_ab(t_stack **a, t_stack **b);
+void	reverse_rotate_ab(t_stack **a, t_stack **b);
+void	stack_add_btm(t_stack **stack, t_stack *new);
+void	stack_add_top(t_stack **stack, t_stack *new);
+t_stack	*create_stack(int i);
+t_stack	*stack_last(t_stack *stack);
+t_stack	*stack_push_top(t_stack **stack);
 
 #endif
