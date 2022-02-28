@@ -23,27 +23,27 @@ static void	sort_stack_3(t_stack **a)
 	mid = (*a)->next->i;
 	bot = (*a)->next->next->i;
 	if (top > mid && mid < bot)
-		return (swap_a(a));
+		swap_a(a);
 	else if (top > mid && mid > bot)
 	{
 		rotate_a(a);
-		return (rotate_a);
+		rotate_a(a);
 	}
 	else if (top > mid && mid < bot)
-		return (rotate_a(a));
+		rotate_a(a);
 	else if (top < mid && mid > bot)
 	{
 		swap_a(a);
-		return (rotate_a(a));
+		rotate_a(a);
 	}
 	else
-		return (reverse_rotate_a(a));
+		reverse_rotate_a(a);
 }
 
 void	small_swap_sort(t_stack **a, t_stack **b, size_t size)
 {
 	if (size == 2)
-		return (swap_a(a));
-	if (size == 3)
-		return (sort_stack_3(a));
+		swap_a(a);
+	else if (size == 3)
+		sort_stack_3(a);
 }
