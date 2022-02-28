@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 		swap_error(a, b);
 	//if (!check_sort(a, b))
 		//swap_sort(&a, &b);
-	print_stack(a);
+	print_stack(a, b);
 	free_stack(a, b);
 }
 
