@@ -13,18 +13,6 @@
 #include "libft.h"
 #include "push_swap.h"
 
-t_stack	*stack_push_top(t_stack **stack)
-{
-	t_stack	*pushed;
-
-	pushed = *stack;
-	if (!pushed)
-		return (NULL);
-	*stack = pushed->next;
-	pushed->next = NULL;
-	return (pushed);
-}
-
 void	push_a(t_stack **a, t_stack **b)
 {
 	t_stack	*pushed;

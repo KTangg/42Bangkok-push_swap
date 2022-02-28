@@ -13,29 +13,6 @@
 #include "libft.h"
 #include "push_swap.h"
 
-t_stack	*stack_push_bot(t_stack **stack)
-{
-	t_stack	*prev;
-	t_stack	*cursor;
-
-	cursor = *stack;
-	prev = NULL;
-	while (cursor != NULL)
-	{
-		if (cursor->next == NULL)
-		{
-			if (prev)
-				prev->next = NULL;
-			else
-				*stack = NULL;
-			return (cursor);
-		}
-		prev = cursor;
-		cursor = cursor->next;
-	}
-	return (NULL);
-}
-
 static void	reverse_rotate_stack(t_stack **stack)
 {
 	t_stack	*pushed;

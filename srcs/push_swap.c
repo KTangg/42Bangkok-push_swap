@@ -25,12 +25,10 @@ int	main(int argc, char **argv)
 		argv = argv + 1;
 	a = NULL;
 	b = NULL;
-	if (argc <=1)
-		swap_error(a, b);
 	if (!valid_swap_input(argc - 1, argv, &a))
 		swap_error(a, b);
-	//if (!check_sort(a, b))
-		//swap_sort(&a, &b);
+	if (!check_sort(a))
+		swap_sort(&a, &b);
 	print_stack(a, b);
 	free_stack(a, b);
 }
@@ -68,7 +66,14 @@ static void	free_stack(t_stack *a, t_stack *b)
 	b = NULL;
 }
 
-/*static int	check_sort(t_stack *a, t_stack *b)
+static int	check_sort(t_stack *stack)
 {
-	return (0);
-}*/
+	while (stack != NULL)
+	{
+		if (stack->next != NULL)
+			if (stack->i > stack->next->i)
+				return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
