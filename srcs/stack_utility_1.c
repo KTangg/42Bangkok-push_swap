@@ -40,9 +40,14 @@ void	stack_add_top(t_stack **stack, t_stack *new)
 {
 	t_stack	*tmp;
 
-	tmp = *stack;
-	*stack = new;
-	new->next = tmp;
+	if (*stack == NULL)
+		*stack = new;
+	else
+	{
+		tmp = *stack;
+		*stack = new;
+		new->next = tmp;
+	}
 }
 
 void	stack_add_btm(t_stack **stack, t_stack *new)
