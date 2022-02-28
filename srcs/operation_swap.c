@@ -15,16 +15,14 @@
 
 static void	top_swap(t_stack **stack)
 {
-	t_stack	*top;
 	t_stack	*cursor;
 
-	top = *stack;
-	if (!top->next)
+	cursor = *stack;
+	if (!cursor->next)
 		return ;
-	cursor = top;
-	*stack = top->next;
-	top->next = (*stack)->next;
-	(*stack)->next = top;
+	*stack = cursor->next;
+	cursor->next = (*stack)->next;
+	(*stack)->next = cursor;
 }
 
 void	swap_a(t_stack **a)
