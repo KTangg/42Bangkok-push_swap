@@ -41,6 +41,7 @@ void	rotate_ab(t_stack **a, t_stack **b);
 void	reverse_rotate_ab(t_stack **a, t_stack **b);
 void	stack_add_btm(t_stack **stack, t_stack *new);
 void	stack_add_top(t_stack **stack, t_stack *new);
+void	small_swap_sort(t_stack **a, t_stack **b, size_t size);
 size_t	stack_size(t_stack *stack);
 t_stack	*create_stack(int i);
 t_stack	*stack_last(t_stack *stack);
