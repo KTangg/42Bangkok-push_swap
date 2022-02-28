@@ -18,6 +18,6 @@ void	swap_sort(t_stack **a, t_stack **b)
 	size_t	size;
 
 	size = stack_size(*a);
-	if (size < 5)
+	if (size < 6)
 		return (small_swap_sort(a, b, size));
 }
