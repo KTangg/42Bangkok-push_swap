@@ -48,7 +48,7 @@ void	print_stack(t_stack *stack)
 	{
 		ft_printf("%d -> ", stack->i);
 	}
-	ft_printf("NULL \n");
+	ft_printf("NULL\n");
 }
 
 static void	free_stack(t_stack *a, t_stack *b)
@@ -59,7 +59,7 @@ static void	free_stack(t_stack *a, t_stack *b)
 	b = NULL;
 }
 
-static int	check_sort(t_stack *a, t_stack *b)
+/*static int	check_sort(t_stack *a, t_stack *b)
 {
 	return (0);
-}
+}*/

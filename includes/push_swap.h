@@ -29,6 +29,7 @@ void	swap_b(t_stack **b);
 void	rotate_a(t_stack **a);
 void	rotate_b(t_stack **b);
 void	stack_clear(t_stack *stack);
+void	print_stack(t_stack *stack);
 void	reverse_rotate_a(t_stack **a);
 void	reverse_rotate_b(t_stack **b);
 void	push_a(t_stack **a, t_stack **b);
