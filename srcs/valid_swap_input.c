@@ -38,7 +38,8 @@ static int	valid_integer(char *nbr, t_stack **a)
 	new = create_stack(n);
 	if (!new)
 		return (0);
-	stack_add_btm(*a, new);
+	stack_add_btm(a, new);
+	return (1);
 }
 
 static int	valid_dup(size_t size, t_stack *a)
@@ -57,6 +58,7 @@ static int	valid_dup(size_t size, t_stack *a)
 			return (0);
 		a = a->next;
 	}
+	return (1);
 }
 
 int	valid_swap_input(size_t array_size, char **array, t_stack **a)
