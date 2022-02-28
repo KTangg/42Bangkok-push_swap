@@ -47,6 +47,7 @@ void	print_stack(t_stack *stack)
 	while (stack != NULL)
 	{
 		ft_printf("%d -> ", stack->i);
+		stack = stack->next;
 	}
 	ft_printf("NULL\n");
 }
