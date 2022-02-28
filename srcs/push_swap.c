@@ -48,12 +48,14 @@ void	print_stack(t_stack *a, t_stack *b)
 	while (a != NULL)
 	{
 		ft_printf("%d -> ", a->i);
+		a = a->next;
 	}
 	ft_printf("NULL\n");
 	ft_printf("b:	");
 	while (b != NULL)
 	{
 		ft_printf("%d -> ", b->i);
+		b = b->next;
 	}
 	ft_printf("NULL\n");
 }
