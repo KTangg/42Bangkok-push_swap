@@ -14,7 +14,7 @@
 #include "push_swap.h"
 
 static void	free_stack(t_stack *a, t_stack *b);
-static int	check_sort(t_stack *a, t_stack *b);
+//static int	check_sort(t_stack *a, t_stack *b);
 
 int	main(int argc, char **argv)
 {
