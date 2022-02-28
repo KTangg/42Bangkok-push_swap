@@ -6,7 +6,7 @@
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:19:20 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 23:24:18 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:49:14 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 
 static void	free_stack(t_stack *a, t_stack *b);
-//static int	check_sort(t_stack *a, t_stack *b);
+static int	check_sort(t_stack *stack);
 
 int	main(int argc, char **argv)
 {

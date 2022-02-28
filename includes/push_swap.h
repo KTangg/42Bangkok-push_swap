@@ -6,7 +6,7 @@
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:29:15 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 13:29:15 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:48:14 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	push_a(t_stack **a, t_stack **b);
 void	push_b(t_stack **a, t_stack **b);
 void	swap_ss(t_stack **a, t_stack **b);
 void	swap_error(t_stack *a, t_stack *b);
-void	swap_sort(t_stack *a, t_stack *b);
+void	swap_sort(t_stack **a, t_stack **b);
 void	rotate_ab(t_stack **a, t_stack **b);
 void	reverse_rotate_ab(t_stack **a, t_stack **b);
 void	stack_add_btm(t_stack **stack, t_stack *new);
