@@ -26,7 +26,7 @@ static void	sort_stack_3(t_stack **a)
 		swap_a(a);
 	else if (top > mid && mid > bot && bot < top)
 	{
-		rotate_a(a);
+		swap_a(a);
 		rotate_a(a);
 	}
 	else if (top > mid && mid < bot && bot < top)
