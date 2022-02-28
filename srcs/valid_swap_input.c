@@ -42,21 +42,16 @@ static int	valid_integer(char *nbr, t_stack **a)
 	return (1);
 }
 
-static int	valid_dup(size_t size, t_stack *a)
+static int	valid_dup(t_stack *stack)
 {
-	size_t	i;
 	t_stack	*check;
 
-	i = 0;
-	check = a;
-	while (i < size)
-		check = check->next;
-	i = 0;
-	while (i < size)
+	check = stack_last(stack);
+	while (stack != check)
 	{
-		if (a->i == check->i)
+		if (stack->i == check->i)
 			return (0);
-		a = a->next;
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -70,7 +65,7 @@ int	valid_swap_input(size_t array_size, char **array, t_stack **a)
 	{
 		if (!valid_integer(array[i], a))
 			return (0);
-		if (!valid_dup(i, *a))
+		if (!valid_dup(*a))
 			return (0);
 		i++;
 	}
