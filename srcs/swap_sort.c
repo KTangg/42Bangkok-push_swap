@@ -19,7 +19,7 @@ static inline size_t	chunk_divide(size_t size)
 
 	chunks = 2;
 	if (size >= 100)
-		chunks = 5;
+		chunks = 11;
 	else if (size >= 500)
 		chunks = 50;
 	return (chunks);
