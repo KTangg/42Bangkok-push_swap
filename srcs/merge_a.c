@@ -16,7 +16,7 @@
 static void	insert_min_a(t_minmax *minmax, t_stack **a, t_stack **b)
 {
 	rotate_to_min(a, minmax->min, 'a');
-	push_b(a, b);
+	push_a(a, b);
 	minmax->min = (*a)->i;
 }
 
@@ -24,7 +24,7 @@ static void	insert_max_a(t_minmax *minmax, t_stack **a, t_stack **b)
 {
 	rotate_to_max(a, minmax->max, 'a');
 	rotate_a(a);
-	push_b(a, b);
+	push_a(a, b);
 	minmax->max = (*a)->i;
 }
 
@@ -34,7 +34,7 @@ static void	insert_a(t_stack **a, t_stack **b)
 	{
 		if ((*a)->next->i > (*b)->i)
 		{
-			push_b(a, b);
+			push_a(a, b);
 			swap_a(a);
 			return ;
 		}
@@ -44,7 +44,7 @@ static void	insert_a(t_stack **a, t_stack **b)
 	{
 		if ((stack_last(*a)->i) < (*b)->i)
 		{
-			push_b(a, b);
+			push_a(a, b);
 			return ;
 		}
 		reverse_rotate_a(a);

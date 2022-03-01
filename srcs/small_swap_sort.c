@@ -49,7 +49,7 @@ static void	sort_stack_5(t_stack **a, t_stack **b, size_t size)
 	push_size = size - 3;
 	while (push_size > 0)
 	{
-		push_a(a, b);
+		push_b(a, b);
 		push_size--;
 		n_b++;
 	}
