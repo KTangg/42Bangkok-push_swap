@@ -56,6 +56,16 @@ static int	valid_dup(t_stack *stack)
 	return (1);
 }
 
+static void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] != 0)
+		free(array[i++]);
+	free(array);
+}
+
 int	valid_swap_input_split(char **array, t_stack **a)
 {
 	int	i;
@@ -81,7 +91,7 @@ int	valid_swap_input_split(char **array, t_stack **a)
 
 int	valid_swap_input(size_t array_size, char **array, t_stack **a)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < array_size)

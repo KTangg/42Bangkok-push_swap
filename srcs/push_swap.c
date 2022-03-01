@@ -26,14 +26,17 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 2)
+	{
 		if (!valid_swap_input_split(argv + 1, &a))
 			swap_error(a, b);
+	}
 	else
+	{
 		if (!valid_swap_input(argc - 1, argv + 1, &a))
 			swap_error(a, b);
+	}
 	if (!check_sort(a))
 		swap_sort(&a, &b);
-	print_stack(a, b);
 	free_stack(a, b);
 }
 
