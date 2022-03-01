@@ -55,7 +55,6 @@ void	merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b)
 {
 	t_minmax	*minmax_a;
 
-	print_stack(*a, *b);
 	minmax_a = find_minmax(*a, n_a);
 	while (n_b > 0)
 	{
@@ -74,8 +73,8 @@ void	merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b)
 		else
 			insert_a(a, b);
 		n_b--;
-		print_stack(*a, *b);
 	}
-	rotate_to_min(a, minmax_a->min, 'a');
+	rotate_to_max(a, minmax_a->max, 'a');
+	rotate_a(a);
 	free(minmax_a);
 }
