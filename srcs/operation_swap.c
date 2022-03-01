@@ -34,7 +34,7 @@ void	swap_a(t_stack **a)
 void	swap_b(t_stack **b)
 {
 	top_swap(b);
-	ft_printf("sa\n");
+	ft_printf("sb\n");
 }
 
 void	swap_ss(t_stack **a, t_stack **b)

@@ -60,7 +60,7 @@ void	merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b)
 	{
 		if (*a == NULL)
 		{
-			push_b(a, b);
+			push_a(a, b);
 			minmax_a->min = (*a)->i;
 			minmax_a->max = (*a)->i;
 			n_b--;
@@ -74,7 +74,6 @@ void	merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b)
 			insert_a(a, b);
 		n_b--;
 	}
-	rotate_to_max(a, minmax_a->max, 'a');
-	rotate_a(a);
+	rotate_to_min(a, minmax_a->min, 'a');
 	free(minmax_a);
 }

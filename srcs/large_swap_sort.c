@@ -20,20 +20,20 @@ void	large_swap_sort(t_stack **a, t_stack **b, size_t size, size_t chunks)
 	size_t	chunk_size;
 	size_t	last_chunk;
 
-	i = -1;
+	i = 0;
 	chunk_size = size / chunks;
 	last_chunk = size - (chunk_size * (chunks - 1));
-	while (++i < chunks)
+	while (i < chunks)
 	{
-		if (i + 1 < chunks)
+		if (i++ + 1 < chunks)
 			sort_in_b(a, b, chunk_size);
 		else
 			sort_in_b(a, b, last_chunk);
 	}
-	i = -1;
-	while (++i < chunks)
+	i = 0;
+	while (i < chunks)
 	{
-		if (i == 0)
+		if (i++ == 0)
 			merge_a(a, b, 0, last_chunk);
 		else
 			merge_a(a, b, last_chunk + ((i - 1) * chunk_size), chunk_size);
