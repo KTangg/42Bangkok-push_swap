@@ -13,7 +13,6 @@
 #include "libft.h"
 #include "push_swap.h"
 
-
 void	large_swap_sort(t_stack **a, t_stack **b, size_t size, size_t chunks)
 {
 	size_t	i;
@@ -36,6 +35,6 @@ void	large_swap_sort(t_stack **a, t_stack **b, size_t size, size_t chunks)
 		if (i++ == 0)
 			merge_a(a, b, 0, last_chunk);
 		else
-			merge_a(a, b, last_chunk + ((i - 1) * chunk_size), chunk_size);
+			merge_a_fin(a, b, last_chunk + ((i - 1) * chunk_size), chunk_size);
 	}
 }

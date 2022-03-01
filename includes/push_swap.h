@@ -55,6 +55,7 @@ void		sort_in_b(t_stack **a, t_stack **b, size_t size);
 void		small_swap_sort(t_stack **a, t_stack **b, size_t size);
 void		large_swap_sort(t_stack **a, t_stack **b, size_t size, size_t ch);
 void		merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b);
+void		merge_a_fin(t_stack **a, t_stack **b, size_t n_a, size_t n_b);
 size_t		stack_size(t_stack *stack);
 t_stack		*create_stack(int i);
 t_stack		*stack_last(t_stack *stack);
