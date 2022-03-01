@@ -47,7 +47,7 @@ static void	insert_a(t_stack **a, t_stack **b)
 			push_a(a, b);
 			return ;
 		}
-		reverse_rotate_a(a);
+		rotate_a(a);
 	}
 }
 
