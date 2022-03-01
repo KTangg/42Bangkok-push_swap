@@ -35,7 +35,7 @@ t_minmax	*find_minmax(t_stack *stack, size_t size)
 	minmax = (t_minmax *)malloc(sizeof(t_minmax) * 1);
 	minmax->max = 0;
 	minmax->min = 2147483647;
-	while (i + 1 < size && stack != NULL)
+	while (i + 1 <= size && stack != NULL)
 	{
 		if (stack->i > minmax->max)
 			minmax->max = stack->i;

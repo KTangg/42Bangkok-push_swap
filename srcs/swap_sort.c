@@ -17,7 +17,7 @@ static inline size_t	chunk_divide(size_t size)
 {
 	size_t	chunks;
 
-	chunks = 4;
+	chunks = 2;
 	if (size > 100)
 		chunks = 5;
 	else if (size > 500)

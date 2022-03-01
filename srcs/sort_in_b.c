@@ -53,22 +53,13 @@ static void	insert_b(t_stack **a, t_stack **b)
 
 void	sort_in_b(t_stack **a, t_stack **b, size_t size)
 {
-	int			first;
 	t_minmax	*minmax_b;
 
-	first = 1;
-	minmax_b = find_minmax(*b, 0);
+	push_a(a, b);
+	size--;
+	minmax_b = find_minmax(*b, 1);
 	while (size > 0)
 	{
-		if (first)
-		{
-			push_a(a, b);
-			minmax_b->min = (*b)->i;
-			minmax_b->max = (*b)->i;
-			first = 0;
-			size--;
-			continue ;
-		}
 		if ((*a)->i < minmax_b->min)
 			insert_min_b(minmax_b, a, b);
 		else if ((*a)->i > minmax_b->max)
