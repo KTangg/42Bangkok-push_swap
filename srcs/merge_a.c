@@ -13,14 +13,14 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void	insert_min_a(t_minmax *minmax, t_stack **a, t_stack **b)
+static void	insert_min_a(t_minmax *minmax, t_stack **a, t_stack **b)
 {
 	rotate_to_min(a, minmax->min, 'a');
 	push_b(a, b);
 	minmax->min = (*a)->i;
 }
 
-void	insert_max_a(t_minmax *minmax, t_stack **a, t_stack **b)
+static void	insert_max_a(t_minmax *minmax, t_stack **a, t_stack **b)
 {
 	rotate_to_max(a, minmax->max, 'a');
 	rotate_a(a);
@@ -28,7 +28,7 @@ void	insert_max_a(t_minmax *minmax, t_stack **a, t_stack **b)
 	minmax->max = (*a)->i;
 }
 
-void	insert_a(t_stack **a, t_stack **b)
+static void	insert_a(t_stack **a, t_stack **b)
 {
 	while ((*b)->i > (*a)->i)
 	{

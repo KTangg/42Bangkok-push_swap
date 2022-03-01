@@ -27,16 +27,16 @@ void	rotate_to_min(t_stack **stack, int min, char c)
 	}
 }
 
-void	rotate_to_max(t_stack **stack, int min, char c)
+void	rotate_to_max(t_stack **stack, int max, char c)
 {
 	if (c == 'a')
 	{
-		while ((*stack)->i != min)
+		while ((*stack)->i != max)
 			rotate_a(stack);
 	}
 	if (c == 'b')
 	{
-		while ((*stack)->i != min)
+		while ((*stack)->i != max)
 			reverse_rotate_b(stack);
 	}
 }
