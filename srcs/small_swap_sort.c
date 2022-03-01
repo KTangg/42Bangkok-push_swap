@@ -40,6 +40,19 @@ static void	sort_stack_3(t_stack **a)
 		reverse_rotate_a(a);
 }
 
+static void	sort_stack_5(t_stack **a, t_stack **b, size_t size)
+{
+	size_t	push_size;
+
+	push_size = size - 3;
+	while (push_size > 0)
+	{
+		push_a(a, b);
+		push_size--;
+	}
+	sort_stack_3(a);
+}
+
 void	small_swap_sort(t_stack **a, t_stack **b, size_t size)
 {
 	if (size == 2)
@@ -47,5 +60,5 @@ void	small_swap_sort(t_stack **a, t_stack **b, size_t size)
 	else if (size == 3)
 		sort_stack_3(a);
 	else
-		(void)b;
+		sort_stack_5(a, b, size);
 }

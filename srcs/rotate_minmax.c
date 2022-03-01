@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_sort.c                                        :+:      :+:    :+:   */
+/*   rotate_minmax.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 14:07:54 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/28 14:48:34 by spoolpra         ###   ########.fr       */
+/*   Created: 2022/03/01 13:36:04 by spoolpra          #+#    #+#             */
+/*   Updated: 2022/03/01 13:36:04 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
+#include "libft.h"
 
-void	swap_sort(t_stack **a, t_stack **b)
+void	rotate_to_min(t_stack **stack, int min, char c)
 {
-	size_t	size;
+	if (c == 'a')
+	{
+		while ((*stack)->i != min)
+			reverse_rotate_a(stack);
+	}
+	if (c == 'b')
+	{
+		while ((*stack)->i != min)
+			rotate_b(stack);
+	}
+}
 
-	size = stack_size(*a);
-	if (size <= 5)
-		small_swap_sort(a, b, size);
-	//else
-		//large_swap_sort(a, b, size);
+void	rotate_to_max(t_stack **stack, int min, char c)
+{
+	if (c == 'a')
+	{
+		while ((*stack)->i != min)
+			rotate_a(stack);
+	}
+	if (c == 'b')
+	{
+		while ((*stack)->i != min)
+			reverse_rotate_b(stack);
+	}
 }
