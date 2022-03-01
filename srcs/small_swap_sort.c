@@ -54,7 +54,7 @@ static void	sort_stack_5(t_stack **a, t_stack **b, size_t size)
 		n_b++;
 	}
 	sort_stack_3(a);
-	merge_a(a, b, 3, n_b);
+	merge_a_fin(a, b, 3, n_b);
 }
 
 void	small_swap_sort(t_stack **a, t_stack **b, size_t size)
