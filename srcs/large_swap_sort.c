@@ -22,7 +22,7 @@ void	large_swap_sort(t_stack **a, t_stack **b, size_t size, size_t chunks)
 
 	i = -1;
 	chunk_size = size / chunks;
-	last_chunk = size - (chunk_size * chunks);
+	last_chunk = size - (chunk_size * (chunks - 1));
 	while (++i < chunks)
 	{
 		if (i + 1 < chunks)

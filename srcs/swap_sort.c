@@ -17,7 +17,7 @@ static inline size_t	chunk_divide(size_t size)
 {
 	size_t	chunks;
 
-	chunks = 3;
+	chunks = 4;
 	if (size > 100)
 		chunks = 5;
 	else if (size > 500)
@@ -38,6 +38,6 @@ void	swap_sort(t_stack **a, t_stack **b)
 	else
 	{
 		chunks = chunk_divide(size);
-		large_swap_sort(a, b, size);
+		large_swap_sort(a, b, size, chunks);
 	}
 }
