@@ -42,15 +42,19 @@ static void	sort_stack_3(t_stack **a)
 
 static void	sort_stack_5(t_stack **a, t_stack **b, size_t size)
 {
+	size_t	n_b;
 	size_t	push_size;
 
+	n_b = 0;
 	push_size = size - 3;
 	while (push_size > 0)
 	{
 		push_a(a, b);
 		push_size--;
+		n_b++;
 	}
 	sort_stack_3(a);
+	merge_a(a, b, 3, n_b);
 }
 
 void	small_swap_sort(t_stack **a, t_stack **b, size_t size)

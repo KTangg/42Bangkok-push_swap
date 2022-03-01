@@ -34,8 +34,8 @@ void	insert_a(t_stack **a, t_stack **b)
 	{
 		if ((*a)->next->i > (*b)->i)
 		{
-			rotate_a(a);
 			push_b(a, b);
+			swap_a(a);
 			return ;
 		}
 		rotate_a(a);
@@ -65,6 +65,8 @@ void	merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b)
 		else
 			insert_a(a, b);
 		n_b--;
+		print_stack(*a, *b);
 	}
 	rotate_to_min(a, minmax_a->min, 'a');
+	free(minmax_a);
 }

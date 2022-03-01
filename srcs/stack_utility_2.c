@@ -29,20 +29,21 @@ size_t	stack_size(t_stack *stack)
 t_minmax	*find_minmax(t_stack *stack, size_t size)
 {
 	size_t		i;
-	t_minmax	minmax;
+	t_minmax	*minmax;
 
 	i = 0;
-	minmax.max = 0;
-	minmax.min = 2147483647;
+	minmax = (t_minmax *)malloc(sizeof(t_minmax) * 1);
+	minmax->max = 0;
+	minmax->min = 2147483647;
 	while (i + 1 < size && stack != NULL)
 	{
-		if (stack->i > minmax.max)
-			minmax.max = stack->i;
-		if (stack->i < minmax.min)
-			minmax.min = stack->i;
+		if (stack->i > minmax->max)
+			minmax->max = stack->i;
+		if (stack->i < minmax->min)
+			minmax->min = stack->i;
 		stack = stack->next;
 	}
-	return (&minmax);
+	return (minmax);
 }
 
 void	print_stack(t_stack *a, t_stack *b)
