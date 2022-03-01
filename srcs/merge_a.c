@@ -38,7 +38,7 @@ static void	insert_a(t_stack **a, t_stack **b)
 			swap_a(a);
 			return ;
 		}
-		rotate_a(a);
+		reverse_rotate_a(a);
 	}
 	while ((*b)->i < (*a)->i)
 	{
