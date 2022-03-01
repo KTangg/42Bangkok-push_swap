@@ -58,6 +58,7 @@ void	sort_in_b(t_stack **a, t_stack **b, size_t size)
 	push_a(a, b);
 	size--;
 	minmax_b = find_minmax(*b, 1);
+	print_stack(*a, *b);
 	while (size > 0)
 	{
 		if ((*a)->i < minmax_b->min)

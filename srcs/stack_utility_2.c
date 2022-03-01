@@ -42,6 +42,7 @@ t_minmax	*find_minmax(t_stack *stack, size_t size)
 		if (stack->i < minmax->min)
 			minmax->min = stack->i;
 		stack = stack->next;
+		i++;
 	}
 	return (minmax);
 }
