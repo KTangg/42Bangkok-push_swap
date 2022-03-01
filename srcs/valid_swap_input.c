@@ -56,18 +56,40 @@ static int	valid_dup(t_stack *stack)
 	return (1);
 }
 
+int	valid_swap_input_split(char **array, t_stack **a)
+{
+	int	i;
+
+	array = ft_split(array[0], ' ');
+	i = 0;
+	while (array[i] != 0)
+	{
+		if (!valid_integer(array[i++], a))
+		{
+			free_array(array);
+			return (0);
+		}
+		if (!valid_dup(*a))
+		{
+			free_array(array);
+			return (0);
+		}
+	}
+	free_array(array);
+	return (1);
+}
+
 int	valid_swap_input(size_t array_size, char **array, t_stack **a)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < array_size)
 	{
-		if (!valid_integer(array[i], a))
+		if (!valid_integer(array[i++], a))
 			return (0);
 		if (!valid_dup(*a))
 			return (0);
-		i++;
 	}
 	return (1);
 }

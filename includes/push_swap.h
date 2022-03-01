@@ -29,6 +29,7 @@ typedef struct s_minmax
 	int	max;
 }	t_minmax;
 
+int			valid_swap_input_split(char **array, t_stack **a);
 int			valid_swap_input(size_t array_size, char **array, t_stack **a);
 void		swap_a(t_stack **a);
 void		swap_b(t_stack **b);
