@@ -15,7 +15,7 @@
 
 static void	insert_min_b(t_minmax *minmax, t_stack **a, t_stack **b)
 {
-	rotate_to_min(b, minmax->min, 'b');
+	rotate_to(b, minmax->min, 'b');
 	push_b(a, b);
 	minmax->min = (*b)->i;
 	swap_b(b);
@@ -23,7 +23,7 @@ static void	insert_min_b(t_minmax *minmax, t_stack **a, t_stack **b)
 
 static void	insert_max_b(t_minmax *minmax, t_stack **a, t_stack **b)
 {
-	rotate_to_max(b, minmax->max, 'b');
+	rotate_to(b, minmax->max, 'b');
 	push_b(a, b);
 	minmax->max = (*b)->i;
 }
@@ -68,6 +68,6 @@ void	sort_in_b(t_stack **a, t_stack **b, size_t size)
 			insert_b(a, b);
 		size--;
 	}
-	rotate_to_max(b, minmax_b->max, 'b');
+	rotate_to(b, minmax_b->max, 'b');
 	free(minmax_b);
 }

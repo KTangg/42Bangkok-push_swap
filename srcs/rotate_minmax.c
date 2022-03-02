@@ -30,22 +30,44 @@ size_t	index_finder(t_stack **stack, int i)
 	return (0);
 }
 
-int	dir_check(t_stack **stack, int	to, int current)
+int	dir_check(t_stack **stack, int	to)
 {
 	int	all;
 	int	to_index;
-	int	current_index;
 
 	all = stack_size(*stack) - 1;
-	to_index = index_finder(stack, to;
-	current_index = index_finder(stack, current);
-	if (current_index > to_index)
+	to_index = index_finder(stack, to);
+	if (to_index > all - to_index + 1)
+		return (-1);
+	else
+		return (1);
+}
+
+void	rotate_to(t_stack **stack, int to, char c)
+{
+	if (dir_check(stack, to) > 0)
 	{
-		if (size - current_index + to_index > )
+		while ((*stack)->i != to)
+		{
+			if (c == 'a')
+				rotate_a(stack);
+			else if (c == 'b')
+				rotate_b(stack);
+		}
+	}
+	else
+	{
+		while ((*stack)->i != to)
+		{
+			if (c == 'a')
+				reverse_rotate_a(stack);
+			else if (c == 'b')
+				reverse_rotate_b(stack);
+		}
 	}
 }
 
-void	rotate_to_min(t_stack **stack, int min, char c)
+/*void	rotate_to_min(t_stack **stack, int min, char c)
 {
 	t_stack	*last;
 
@@ -81,4 +103,4 @@ void	rotate_to_max(t_stack **stack, int max, char c)
 		while ((*stack)->i != max)
 			reverse_rotate_b(stack);
 	}
-}
+}*/
