@@ -6,7 +6,7 @@
 /*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:33:46 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/03/02 20:34:39 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:26:35 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 void	swap_error(t_stack *a, t_stack *b)
 {
 	free_stack(a, b);
-	ft_putstr_fd("Error\n", STDERR);
+	ft_putendl_fd("Error", 2);
 	exit(1);
 }
 

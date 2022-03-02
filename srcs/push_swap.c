@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:19:20 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/28 14:49:14 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:26:23 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 void	swap_error(t_stack *a, t_stack *b)
 {
 	free_stack(a, b);
-	ft_putstr_fd("Error\n", STDERR);
+	ft_putendl_fd("Error", 2);
 	exit(1);
 }
 

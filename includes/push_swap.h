@@ -6,7 +6,7 @@
 /*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:29:15 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/03/02 20:43:26 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:26:40 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-
-# define STDERR 2
 
 typedef struct s_stack
 {

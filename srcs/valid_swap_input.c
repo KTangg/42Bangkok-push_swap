@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid_swap_input.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:54:43 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/27 15:30:22 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:31:20 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int	valid_swap_input(size_t array_size, char **array, t_stack **a)
 	i = 0;
 	while (i < array_size)
 	{
+		if (ft_strlen(array[i]) == 0)
+			return (0);
 		if (!valid_integer(array[i++], a))
 			return (0);
 		if (!valid_dup(*a))
