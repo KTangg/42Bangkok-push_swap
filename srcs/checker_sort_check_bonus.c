@@ -6,7 +6,7 @@
 /*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:36:22 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/03/02 20:34:11 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:16:07 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	cmd_sort(char *cmd, t_stack **a, t_stack **b)
 		reverse_rotate_b(b);
 	if (!ft_strncmp(cmd, "rrr\n", 4))
 		reverse_rotate_ab(a, b);
+	swap_error(a, b);
 }
 
 static int	check_sort_ab(t_stack **a, t_stack **b)
