@@ -6,7 +6,7 @@
 /*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:29:15 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/03/02 20:34:02 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:43:26 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void		reverse_rotate_ab(t_stack **a, t_stack **b);
 void		stack_add_btm(t_stack **stack, t_stack *new);
 void		stack_add_top(t_stack **stack, t_stack *new);
 void		checking_sort_done(t_stack **a, t_stack **b);
-void		rotate_to_min(t_stack **stack, int min, char c);
-void		rotate_to_max(t_stack **stack, int max, char c);
 void		sort_in_b(t_stack **a, t_stack **b, size_t size);
 void		small_swap_sort(t_stack **a, t_stack **b, size_t size);
 void		merge_a(t_stack **a, t_stack **b, size_t n_a, size_t n_b);
