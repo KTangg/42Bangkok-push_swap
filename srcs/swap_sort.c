@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoolpra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:07:54 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/02/28 14:48:34 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:28:02 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static inline size_t	chunk_divide(size_t size)
 	size_t	chunks;
 
 	chunks = 2;
-	if (size >= 50)
-		chunks = 5;
-	else if (size >= 400)
+	if (size >= 400)
 		chunks = 11;
+	else if (size >= 50)
+		chunks = 5;
 	return (chunks);
 }
 
