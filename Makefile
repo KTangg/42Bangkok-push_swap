@@ -6,7 +6,7 @@
 #    By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:33:16 by spoolpra          #+#    #+#              #
-#    Updated: 2022/03/02 20:40:42 by spoolpra         ###   ########.fr        #
+#    Updated: 2022/03/05 22:07:48 by spoolpra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ INCS = -Iincludes/ -I$(LIB_DIR)includes/
 NAME = push_swap
 SRCS = push_swap.c valid_swap_input.c operation_push.c operation_reverse_rotate.c operation_rotate.c operation_swap.c stack_utility_1.c  stack_utility_2.c \
 swap_sort.c small_swap_sort.c large_swap_sort.c rotate_minmax.c merge_a.c sort_in_b.c
-SRCS_BONUS = valid_swap_input.c operation_push.c operation_reverse_rotate.c operation_rotate.c operation_swap.c stack_utility_1.c  stack_utility_2.c checker_main_bonus.c checker_sort_check_bonus.c
+SRCS_BONUS = valid_swap_input.c stack_utility_1.c  stack_utility_2.c checker_main_bonus.c checker_sort_check_bonus.c check_push_bonus.c check_swap_bonus.c check_rotate_bonus.c check_reverse_rotate_bonus.c
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: spoolpra <spoolpra@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:33:46 by spoolpra          #+#    #+#             */
-/*   Updated: 2022/03/02 21:26:35 by spoolpra         ###   ########.fr       */
+/*   Updated: 2022/03/05 22:13:40 by spoolpra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int	main(int argc, char **argv)
 	else
 	{
 		if (!valid_swap_input(argc - 1, argv + 1, &a))
+		{
 			swap_error(a, b);
+		}
 	}
 	checking_sort_done(&a, &b);
 	free_stack(a, b);
